@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace tipaLABA._2
 {
-
+    // make a program to find element of progression and sum of all elements in 3 cases
     
     public partial class Form1 : Form
     {
@@ -39,11 +39,11 @@ namespace tipaLABA._2
                 l1 = new Tline(a1, d, n1, n2);
                 l2 = new Tline(a, b);
                 l3 = new Tline();
-                label8.Text ="Сума елементів ="+ Convert.ToString(Math.Round(l1.SUM, 2));
+                label8.Text ="Sum of elements ="+ Convert.ToString(Math.Round(l1.SUM, 2));
                 l1.Ur(label7);
-                label16.Text = "Сума елементів =" + Convert.ToString(Math.Round(l2.SUM, 2));
+                label16.Text = "Sum of elements =" + Convert.ToString(Math.Round(l2.SUM, 2));
                 l2.Ur(label15);
-                label22.Text = "Сума елементів =" + Convert.ToString(Math.Round(l3.SUM, 2));
+                label22.Text = "Sum of elements  =" + Convert.ToString(Math.Round(l3.SUM, 2));
                 l3.Ur(label21);
                 label11.Text = l2.A1.ToString();
                 label12.Text = l2.D.ToString();
@@ -56,7 +56,7 @@ namespace tipaLABA._2
             }
             catch
             {
-                MessageBox.Show("Помилка введення");
+                MessageBox.Show("error");
             }
         }
     }
@@ -69,14 +69,14 @@ namespace tipaLABA._2
         int n2;
         double sum;
         int number;
-        public Tline(int aa1, int dd1, int nn1, int nn2)
+        public Tline(int aa1, int dd1, int nn1, int nn2)  // case 1: all elements input in textbox
         {
             a1 = aa1;
             d = dd1;
             n1 = nn1;
             n2 = nn2;
         }
-        public Tline(int a, int b)
+        public Tline(int a, int b) //  case 2: all elements determines randomly from a to b
         {
             Random ran = new Random();
             a1 = ran.Next(a, b);
@@ -84,7 +84,7 @@ namespace tipaLABA._2
             n1 = ran.Next(a, b);
             n2 = ran.Next(a, b);
         }
-        public Tline()
+        public Tline() // all elements determines randomly from 0 to 100;
         {
             Random ran = new Random();
             a1 = ran.Next(0, 100);
@@ -104,7 +104,7 @@ namespace tipaLABA._2
         {
             int number;
             number = a1 + d * (n1 - 1);
-            l.Text = "Член прогресії =" + number;
+            l.Text = "Element of progression =" + number;
         }
         public int A1
         {
